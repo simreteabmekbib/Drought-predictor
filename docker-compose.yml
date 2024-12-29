@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow
+    ports:
+      - "5001:5000"
+    environment:
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+      - ./mlflow.db:/mlflow/mlflow.db
+    command: mlflow server --backend-store-uri sqlite:///mlflow/mlflow.db --default-artifact-root /mlflow/mlruns --host 0.0.0.0 --port 5000
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+  drought_prediction:
+    build:
+      context: .
+    image: drought_predictor
+    container_name: drought_prediction
+    ports:
+      - "5002:5002"
+
+volumes:
+  grafana-storage:

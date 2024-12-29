@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "*"
+jupyter = "*"
+scikit-learn = "*"
+matplotlib = "*"
+seaborn = "*"
+hyperopt = "*"
+xgboost = "*"
+mlflow = "*"
+prefect = "*"
+flask = "*"
+gunicorn = "*"
+prometheus-client = "*"
+flake8 = "*"
+black = "*"
+pre-commit = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"

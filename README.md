@@ -1,6 +1,6 @@
 # **Drought Predictor Project**
 
-![Drought](https://github.com/simreteabmekbib/Drought-predictor/blob/main/image.jpg)
+![Drought](https://github.com/simreteabmekbib/Drought-predictor/blob/main/image.png)
 
 An end-to-end machine learning project designed to predict drought levels in the continental US using meteorological and soil data. This project incorporates best practices, including a training pipeline, experiment tracking, deployment, and monitoring.
 

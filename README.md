@@ -131,6 +131,10 @@ The goal is to classify drought severity using meteorological data, enabling pre
     ```
 
 ### Deployment
+I deployed the project on render and you can get the api in this url
+```bash
+https://drought-predictor.onrender.com/predict
+```
 7. Convert `predict.py` into a Flask application for containerized deployment.
 
 8. Build and run the Docker container:

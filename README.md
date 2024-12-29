@@ -53,8 +53,8 @@ The goal is to classify drought severity using meteorological data, enabling pre
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-repo/drought-predictor-project.git
-    cd drought-predictor-project
+    git clone https://github.com/simreteabmekbib/Drought-predictor.git
+    cd Drought-predictor
     ```
 
 2. Create a `data` directory:
